@@ -31,7 +31,9 @@ def main():
                 out_dir = osp.basename(file_path).replace('.', '_')
                 out_dir = osp.join(osp.dirname(file_path), out_dir)
             else:
-                out_dir = args.out
+                # out_dir = args.out#批量生成指定输出目录
+                out_dir = osp.basename(file_path).replace('.', '_')
+                out_dir = osp.join(osp.dirname(args.out), out_dir)
             if not osp.exists(out_dir):
                 os.mkdir(out_dir)
 
@@ -63,9 +65,6 @@ def main():
 
             PIL.Image.fromarray(img).save(osp.join(out_dir, 'img.png'))
             utils.lblsave(osp.join(out_dir, 'label.png'), lbl)
-            print("out_dir:",out_dir)
-            print("file_path:",count[i])
-            utils.lblsave(osp.join(out_dir+'/../../mask', count[i]+'.png'), lbl)
             PIL.Image.fromarray(lbl_viz).save(osp.join(out_dir, 'label_viz.png'))
 
             with open(osp.join(out_dir, 'label_names.txt'), 'w') as f:
