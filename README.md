@@ -8,6 +8,11 @@
 [![Docker Build Status](https://img.shields.io/docker/build/wkentaro/labelme.svg)](https://hub.docker.com/r/wkentaro/labelme)
 
 
+```
+# 已改成批量生成数据，用法：
+\labelme\labelme\cli>python json_to_dataset.py "文件夹路径"
+```
+
 Labelme is a graphical image annotation tool inspired by <http://labelme.csail.mit.edu>.  
 It is written in Python and uses Qt for its graphical interface.
 
