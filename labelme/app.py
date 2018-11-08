@@ -526,7 +526,8 @@ class MainWindow(QtWidgets.QMainWindow, WindowMixin):
 
     def setDirty(self):
         if self._config['auto_save']:
-            label_file = os.path.splitext(self.imagePath)[0] + '.json'
+            label_file = os.path.join(os.path.dirname(self.imagePath),self._config["auto_save_path"],os.path.splitext(os.path.basename(self.imagePath))[0] + '.json')
+            # label_file = os.path.splitext(self.imagePath)[0] + '.json'
             self.saveLabels(label_file)
             return
         self.dirty = True
@@ -944,7 +945,8 @@ class MainWindow(QtWidgets.QMainWindow, WindowMixin):
             return False
         # assumes same name, but json extension
         self.status("Loading %s..." % os.path.basename(str(filename)))
-        label_file = os.path.splitext(filename)[0] + '.json'
+        # label_file = os.path.splitext(filename)[0] + '.json'
+        label_file = os.path.join(os.path.dirname(filename),self._config["auto_save_path"],os.path.splitext(os.path.basename(filename))[0] + '.json')
         if QtCore.QFile.exists(label_file) and \
                 LabelFile.isLabelFile(label_file):
             try:
@@ -1311,8 +1313,13 @@ class MainWindow(QtWidgets.QMainWindow, WindowMixin):
                       for fmt in QtGui.QImageReader.supportedImageFormats()]
         images = []
 
-        for root, dirs, files in os.walk(folderPath):
-            for file in files:
+        # for root, dirs, files in os.walk(folderPath):
+        #     for file in files:
+        #         if file.lower().endswith(tuple(extensions)):
+        #             relativePath = os.path.join(root, file)
+        #             images.append(relativePath)
+        root = folderPath
+        for file in os.listdir(folderPath):
                 if file.lower().endswith(tuple(extensions)):
                     relativePath = os.path.join(root, file)
                     images.append(relativePath)

@@ -13,6 +13,13 @@
 \labelme\labelme\cli>python json_to_dataset.py "文件夹路径"
 ```
 
+## Logs
+### 2018/11/8
+修改成自动保存到图片目录下到json文件夹中。需预先建立文件夹。
+以前用过该工具的，请先删除C:\Users\当前用户\.labelmerc 文件
+打开工具一次后，修改C:\Users\当前用户\.labelmerc 文件
+auto_save_path 对应保存的相对路径
+
 Labelme is a graphical image annotation tool inspired by <http://labelme.csail.mit.edu>.  
 It is written in Python and uses Qt for its graphical interface.
 

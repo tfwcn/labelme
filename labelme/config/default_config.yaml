@@ -1,4 +1,4 @@
-auto_save: false
+auto_save: true
 store_data: true
 keep_prev: false
 
@@ -12,7 +12,9 @@ validate_label: null
 show_label_text_field: true
 label_completion: startswith
 
-epsilon: 11.0
+epsilon: 3.0
+
+auto_save_path: "json"
 
 shortcuts:
   close: Ctrl+W

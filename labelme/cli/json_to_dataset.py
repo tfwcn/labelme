@@ -25,6 +25,8 @@ def main():
 
     count = os.listdir(json_file) 
     for i in range(0, len(count)):
+        if count[i][-5:]!=".json":
+            continue
         file_path = os.path.join(json_file, count[i])
         if os.path.isfile(file_path):
             if args.out is None:
