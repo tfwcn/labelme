@@ -7,18 +7,25 @@
 [![Travis Build Status](https://travis-ci.org/wkentaro/labelme.svg?branch=master)](https://travis-ci.org/wkentaro/labelme)
 [![Docker Build Status](https://img.shields.io/docker/build/wkentaro/labelme.svg)](https://hub.docker.com/r/wkentaro/labelme)
 
-
-```
-# å·²æ”¹æˆæ‰¹é‡ç”Ÿæˆæ•°æ®ï¼Œç”¨æ³•ï¼š
-\labelme\labelme\cli>python json_to_dataset.py "æ–‡ä»¶å¤¹è·¯å¾„"
+```bash
+#!/bin/bash
+# ÒÑ¸Ä³ÉÅúÁ¿Éú³ÉÊı¾İ£¬ÓÃ·¨£º
+\labelme\labelme\cli>python json_to_dataset.py "ÎÄ¼ş¼ĞÂ·¾¶"
 ```
 
 ## Logs
+
+### 2019/8/7
+
+È¡ÏûjsonÄÚµÄÍ¼Æ¬base64Êı¾İ
+È¡Ïûjson_to_dataset.pyµÄÔ­Í¼Éú³É
+
 ### 2018/11/8
-ä¿®æ”¹æˆè‡ªåŠ¨ä¿å­˜åˆ°å›¾ç‰‡ç›®å½•ä¸‹åˆ°jsonæ–‡ä»¶å¤¹ä¸­ã€‚éœ€é¢„å…ˆå»ºç«‹æ–‡ä»¶å¤¹ã€‚
-ä»¥å‰ç”¨è¿‡è¯¥å·¥å…·çš„ï¼Œè¯·å…ˆåˆ é™¤C:\Users\å½“å‰ç”¨æˆ·\.labelmerc æ–‡ä»¶
-æ‰“å¼€å·¥å…·ä¸€æ¬¡åï¼Œä¿®æ”¹C:\Users\å½“å‰ç”¨æˆ·\.labelmerc æ–‡ä»¶
-auto_save_path å¯¹åº”ä¿å­˜çš„ç›¸å¯¹è·¯å¾„
+
+ĞŞ¸Ä³É×Ô¶¯±£´æµ½Í¼Æ¬Ä¿Â¼ÏÂµ½jsonÎÄ¼ş¼ĞÖĞ¡£ĞèÔ¤ÏÈ½¨Á¢ÎÄ¼ş¼Ğ¡£
+ÒÔÇ°ÓÃ¹ı¸Ã¹¤¾ßµÄ£¬ÇëÏÈÉ¾³ıC:\Users\µ±Ç°ÓÃ»§\.labelmerc ÎÄ¼ş
+´ò¿ª¹¤¾ßÒ»´Îºó£¬ĞŞ¸ÄC:\Users\µ±Ç°ÓÃ»§\.labelmerc ÎÄ¼ş
+auto_save_path ¶ÔÓ¦±£´æµÄÏà¶ÔÂ·¾¶
 
 Labelme is a graphical image annotation tool inspired by <http://labelme.csail.mit.edu>.  
 It is written in Python and uses Qt for its graphical interface.
@@ -207,7 +214,8 @@ conda activate labelme
 
 # Build the standalone executable
 conda install pyqt
-pip install .
+pip install pypiwin32
+pip install labelme
 pip install pyinstaller
 pyinstaller labelme.spec
 dist/labelme --version

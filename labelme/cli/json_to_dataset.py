@@ -41,7 +41,8 @@ def main():
 
             data = json.load(open(file_path))
 
-            if data['imageData']:
+            # 禁用json图片数据
+            if False and data['imageData']:
                 imageData = data['imageData']
             else:
                 imagePath = os.path.join(os.path.dirname(file_path), data['imagePath'])
@@ -64,8 +65,9 @@ def main():
             for name, value in label_name_to_value.items():
                 label_names[value] = name
             lbl_viz = utils.draw_label(lbl, img, label_names)
-
-            PIL.Image.fromarray(img).save(osp.join(out_dir, 'img.png'))
+            
+            # 不保存原图
+            # PIL.Image.fromarray(img).save(osp.join(out_dir, 'img.png'))
             utils.lblsave(osp.join(out_dir, 'label.png'), lbl)
             PIL.Image.fromarray(lbl_viz).save(osp.join(out_dir, 'label_viz.png'))
 

@@ -35,7 +35,8 @@ class LabelFile(object):
         try:
             with open(filename, 'rb' if PY2 else 'r') as f:
                 data = json.load(f)
-            if data['imageData'] is not None:
+            # 禁用json图片数据
+            if False and data['imageData'] is not None:
                 imageData = base64.b64decode(data['imageData'])
             else:
                 # relative path from label file to relative path from cwd
@@ -72,8 +73,10 @@ class LabelFile(object):
     def save(self, filename, shapes, imagePath, imageData=None,
              lineColor=None, fillColor=None, otherData=None,
              flags=None):
+        # 禁用json图片数据
         if imageData is not None:
-            imageData = base64.b64encode(imageData).decode('utf-8')
+            # imageData = base64.b64encode(imageData).decode('utf-8')
+            imageData = None
         if otherData is None:
             otherData = {}
         if flags is None:
