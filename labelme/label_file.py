@@ -2,6 +2,7 @@ import base64
 import json
 import os.path
 import sys
+import hashlib
 
 
 PY2 = sys.version_info[0] == 2
@@ -31,6 +32,7 @@ class LabelFile(object):
             'fillColor',
             'shapes',  # polygonal annotations
             'flags',   # image level flags
+            'imageMd5',
         ]
         try:
             with open(filename, 'rb' if PY2 else 'r') as f:
@@ -73,8 +75,10 @@ class LabelFile(object):
     def save(self, filename, shapes, imagePath, imageData=None,
              lineColor=None, fillColor=None, otherData=None,
              flags=None):
+        imageMd5 = None
         # 禁用json图片数据
         if imageData is not None:
+            imageMd5 = hashlib.md5(imageData).hexdigest()
             # imageData = base64.b64encode(imageData).decode('utf-8')
             imageData = None
         if otherData is None:
@@ -88,6 +92,7 @@ class LabelFile(object):
             fillColor=fillColor,
             imagePath=imagePath,
             imageData=imageData,
+            imageMd5=imageMd5,
         )
         for key, value in otherData.items():
             data[key] = value
