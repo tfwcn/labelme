@@ -35,7 +35,7 @@ class LabelFile(object):
             'imageMd5',
         ]
         try:
-            with open(filename, 'rb' if PY2 else 'r') as f:
+            with open(filename, 'rb' if PY2 else 'r', encoding='utf-8') as f:
                 data = json.load(f)
             # 禁用json图片数据
             if False and data['imageData'] is not None:
@@ -97,7 +97,7 @@ class LabelFile(object):
         for key, value in otherData.items():
             data[key] = value
         try:
-            with open(filename, 'wb' if PY2 else 'w') as f:
+            with open(filename, 'wb' if PY2 else 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
             self.filename = filename
         except Exception as e:
