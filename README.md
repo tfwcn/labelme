@@ -9,23 +9,31 @@
 
 ```bash
 #!/bin/bash
-# ÒÑ¸Ä³ÉÅúÁ¿Éú³ÉÊı¾İ£¬ÓÃ·¨£º
-\labelme\labelme\cli>python json_to_dataset.py "ÎÄ¼ş¼ĞÂ·¾¶"
+# å·²æ”¹æˆæ‰¹é‡ç”Ÿæˆæ•°æ®ï¼Œç”¨æ³•ï¼š
+\labelme\labelme\cli>python json_to_dataset.py "æ–‡ä»¶å¤¹è·¯å¾„"
 ```
 
 ## Logs
 
+### 2020/4/25
+
+é»˜è®¤UTF8ç¼–ç 
+
+### 2019/9/4
+
+å¢åŠ æ–‡ä»¶md5ï¼Œç”¨äºéªŒè¯å›¾ç‰‡ä¿¡æ¯
+
 ### 2019/8/7
 
-È¡ÏûjsonÄÚµÄÍ¼Æ¬base64Êı¾İ
-È¡Ïûjson_to_dataset.pyµÄÔ­Í¼Éú³É
+å–æ¶ˆjsonå†…çš„å›¾ç‰‡base64æ•°æ®
+å–æ¶ˆjson_to_dataset.pyçš„åŸå›¾ç”Ÿæˆ
 
 ### 2018/11/8
 
-ĞŞ¸Ä³É×Ô¶¯±£´æµ½Í¼Æ¬Ä¿Â¼ÏÂµ½jsonÎÄ¼ş¼ĞÖĞ¡£ĞèÔ¤ÏÈ½¨Á¢ÎÄ¼ş¼Ğ¡£
-ÒÔÇ°ÓÃ¹ı¸Ã¹¤¾ßµÄ£¬ÇëÏÈÉ¾³ıC:\Users\µ±Ç°ÓÃ»§\.labelmerc ÎÄ¼ş
-´ò¿ª¹¤¾ßÒ»´Îºó£¬ĞŞ¸ÄC:\Users\µ±Ç°ÓÃ»§\.labelmerc ÎÄ¼ş
-auto_save_path ¶ÔÓ¦±£´æµÄÏà¶ÔÂ·¾¶
+ä¿®æ”¹æˆè‡ªåŠ¨ä¿å­˜åˆ°å›¾ç‰‡ç›®å½•ä¸‹åˆ°jsonæ–‡ä»¶å¤¹ä¸­ã€‚éœ€é¢„å…ˆå»ºç«‹æ–‡ä»¶å¤¹ã€‚
+ä»¥å‰ç”¨è¿‡è¯¥å·¥å…·çš„ï¼Œè¯·å…ˆåˆ é™¤C:\Users\å½“å‰ç”¨æˆ·\.labelmerc æ–‡ä»¶
+æ‰“å¼€å·¥å…·ä¸€æ¬¡åï¼Œä¿®æ”¹C:\Users\å½“å‰ç”¨æˆ·\.labelmerc æ–‡ä»¶
+auto_save_path å¯¹åº”ä¿å­˜çš„ç›¸å¯¹è·¯å¾„
 
 Labelme is a graphical image annotation tool inspired by <http://labelme.csail.mit.edu>.  
 It is written in Python and uses Qt for its graphical interface.
